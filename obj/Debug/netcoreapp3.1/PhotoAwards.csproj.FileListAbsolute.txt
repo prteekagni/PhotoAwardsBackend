@@ -1,0 +1,4 @@
+D:\development\backend\PhotoAwards\obj\Debug\netcoreapp3.1\PhotoAwards.csprojAssemblyReference.cache
+D:\development\backend\PhotoAwards\obj\Debug\netcoreapp3.1\PhotoAwards.MvcApplicationPartsAssemblyInfo.cache
+D:\development\backend\PhotoAwards\obj\Debug\netcoreapp3.1\PhotoAwards.AssemblyInfoInputs.cache
+D:\development\backend\PhotoAwards\obj\Debug\netcoreapp3.1\PhotoAwards.AssemblyInfo.cs

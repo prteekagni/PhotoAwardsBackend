@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace PhotoAwards.Models
 {
-    public class Contests
+    public class BaseModel
     {
        [Required]
        public string Title {get;set;}
