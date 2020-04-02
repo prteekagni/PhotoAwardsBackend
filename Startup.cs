@@ -1,16 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using PhotoAwards.Context;
+using PhotoAwards.Repository.Contests;
+using PhotoAwards.Repository.Entries;
+using PhotoAwards.Repository.Users;
 
 namespace PhotoAwards
 {
@@ -27,10 +24,10 @@ namespace PhotoAwards
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-             services.AddScoped<IContestsRepository, ContestsRepository>();
-            services.AddScoped<IEnteriesRepository, EnteriesRepository>();
-            services.AddScoped<IUsersRepository, UsersRepository>();
-            
+            services.AddScoped<IContest, Contest>();
+            services.AddScoped<IEntry, Entry>();
+            services.AddScoped<IUser, User>();
+
             services.AddControllers();
         }
 

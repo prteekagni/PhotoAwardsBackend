@@ -1,26 +1,23 @@
+using PhotoAwards.Models;
+using PhotoAwards.Repository.Entries;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using PhotoAwards.Models;
-using PhotoAwards.Repository.Contests;
-
-
 
 namespace PhotoAwards.ViewModels
 {
-    public class ContestsViewModel
+    public class EntryViewModel
     {
         #region Private Variables 
-        public IContestsRepository _repo { get; set; }
+        public IEntry _repo { get; set; }
         
         #endregion
-        public ContestsViewModel(IContestsRepository repo)
+        public EntryViewModel(IEntry repo)
         {
             this._repo = repo;
         }
     
-        public async Task<ContestsModel> Create(ContestsModel data)
+        public async Task<EntryModel> Create(EntryModel data)
         {
             data.ID = Guid.NewGuid();
             var result = await this._repo.Add(data);
@@ -38,29 +35,29 @@ namespace PhotoAwards.ViewModels
             return result;
         }
 
-        public async Task<List<ContestsModel>> GetContestss()
+        public async Task<List<EntryModel>> GetEnteriess()
         {
-            return await this._repo.GetAll() as List<ContestsModel>;
+            return await this._repo.GetAll() as List<EntryModel>;
         }
 
-        public async Task<ContestsModel> GetContestsById(string id)
+        public async Task<EntryModel> GetEnteriesById(string id)
         {
             return await this._repo.Find(id);
         }
 
-        public async Task<ContestsModel> UpdateContests(Guid id, ContestsModel model)
+        public async Task<EntryModel> UpdateEnteries(Guid id, EntryModel model)
         {
             model.ID = id;
             return await this._repo.Update(model);
         }
-        public async Task<ContestsModel> DeleteContests(string id)
+        public async Task<EntryModel> DeleteEnteries(string id)
         {
             return await this._repo.Remove(id);
         }
 
-        public async Task<IEnumerable<ContestsModel>> GetContestsByType(string key)
+        public async Task<IEnumerable<EntryModel>> GetEnteriesByType(string key)
         {
-            return await this._repo.GetContestsByType(key);
+            return null;//await this._repo.GetEnteriesByType(key);
         }
     }
 }

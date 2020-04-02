@@ -2,19 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PhotoAwards.Helper;
 using PhotoAwards.Models;
-using PhotoAwards.Repository;
-using PhotoAwards.Repository.User;
+using PhotoAwards.Repository.Users;
 
 namespace PhotoAwards.ViewModels
 {
     public class UserViewModel:BaseViewModel
     {
         #region Private Variables 
-        public IUserRepository _repo {get; set;}
+        public IUser _repo {get; set;}
         #endregion
-        public UserViewModel(IUserRepository repo)
+        public UserViewModel(IUser repo)
         {
             this._repo=repo;
         }

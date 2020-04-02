@@ -1,22 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace PhotoAwards.Models
 {
     public class BaseModel
     {
-       [Required]
-       public string Title {get;set;}
-       [Required]
-       public string Description {get;set;}
+        public Guid ID { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public DateTime? UpdatedOn { get; set; }
+        public string CreatedBy { get; set; }
+        public string UpdatedBy { get; set; }
 
-       public bool isActive {get;set;}
-
-       public DateTime? EndOn { get; set;}
-
-       public DateTime? StartOn { get; set;}
     }
 }

@@ -7,12 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace PhotoAwards.Models
 {
-    public class ContestsModel : BaseModel
+    public class UserModel : BaseModel
     {
         [Required]
-        public string Title { get; set; }
-        [Required]
-        public string Description { get; set; }
+        public string Name { get; set; }
         
+        public string Logo { get; set; }
+        public bool? isFav { get; set; }
+
+        public string Url { get; set; }
+
+        public string BrandType {get;set;}
+
     }
 }
