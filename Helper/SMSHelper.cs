@@ -12,7 +12,7 @@ namespace PhotoAwards.Helper
         {
             Console.WriteLine("Got Request from controller");
 
-            AmazonSimpleNotificationServiceClient smsClient = new AmazonSimpleNotificationServiceClient("AKIAJWQHHE5TFZQOXXHQ", "VGRpFzpfsvLhqyvuNb42RPhhW95L/8+Tkj712pkx", Amazon.RegionEndpoint.APSouth1);
+            AmazonSimpleNotificationServiceClient smsClient = new AmazonSimpleNotificationServiceClient("", "", Amazon.RegionEndpoint.APSouth1);
             var attributes = new Dictionary<string, MessageAttributeValue>();
             attributes.Add("AWS.SNS.SMS.SenderID", new MessageAttributeValue() { StringValue = "PhotoReward", DataType = "String" });
             attributes.Add("AWS.SNS.SMS.SMSType", new MessageAttributeValue() { StringValue = "Transactional", DataType = "String" });
