@@ -48,9 +48,11 @@ namespace PhotoAwards.ViewModels
             return await this._repo.Remove(id);
         }
 
-        public async Task<IEnumerable<ContestModel>> GetContestsByType(string key)
+        public async Task<IEnumerable<ContestModel>> GetContestsByStatus(string status)
         {
-            return null;//await this._repo.GetContestsByType(key);
+          return await this._repo.GetContestsByStaus(status);
         }
+
+        
     }
 }

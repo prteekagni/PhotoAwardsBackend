@@ -32,13 +32,20 @@ namespace PhotoAwards.Controller
 
         [HttpGet, AllowAnonymous]
 
-        public  void  Get()
+        public async Task<IActionResult> Get()
         {
-           
-            // var result = await vm.GetContests();
-            // return Ok(result);
-            Console.WriteLine("Get Method Caaled");
+             var result = await vm.GetContests();
+            return Ok(result);
         }
+
+        [HttpGet("{status}")]
+        public async Task<IActionResult> GetContestsByStatus(string status)
+        {
+            return Ok(await this.vm.GetContestsByStatus(status));
+        }
+
+
+
         // GET api/values/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
