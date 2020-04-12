@@ -23,10 +23,10 @@ namespace PhotoAwards.Helper
                 String TO = "prateek@elinfinitoindia.in";
 
                 // Replace smtp_username with your Amazon SES SMTP user name.
-                String SMTP_USERNAME = "AKIAU2YKI5JTWJFQV4UU";
+                String SMTP_USERNAME = "";
 
                 // Replace smtp_password with your Amazon SES SMTP user name.
-                String SMTP_PASSWORD = "BOn1TqRjyFmu6Rbj7lIs721Bu9Kfza2byWFarOtmwlnJ";
+                String SMTP_PASSWORD = "";
 
                 // (Optional) the name of a configuration set to use for this message.
                 // If you comment out this line, you also need to remove or comment out
