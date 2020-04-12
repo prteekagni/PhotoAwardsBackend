@@ -7,13 +7,15 @@ namespace PhotoAwards.Models
     public class EntryModel : BaseModel
     {
         [Required]
-        public string Name { get; set; }
+        public string Title { get; set; }
         [Required]
-        public string Link { get; set; }
+        public string ImageUrl { get; set; }
         [Required]
         public Guid UserID { get; set; }
         [Required]
         public Guid? ContestsID { get; set; }
+
+        public bool? isBoosted {get;set;}
 
         [ForeignKey("ContestsID")]
         public ContestModel Contests { get; set; }

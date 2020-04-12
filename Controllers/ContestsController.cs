@@ -7,29 +7,37 @@ using Microsoft.AspNetCore.Mvc;
 using PhotoAwards.Models;
 using PhotoAwards.Repository.Contests;
 using PhotoAwards.ViewModels;
+using Amazon.SimpleNotificationService.Model;
+using Amazon.SimpleNotificationService;
+using PhotoAwards.Helper;
 
 namespace PhotoAwards.Controller
 {
-    [Route("api/[controller])")]
+    [Route("api/[controller]")]
     public class ContestsController : ControllerBase
     {
         #region Private Property
         private readonly IContest _repo;
         private ContestViewModel vm;
+
+
         public ContestsController(IContest repo)
         {
-            this._repo = repo;
-            this.vm = new ContestViewModel(_repo);
+            // AmazonSimpleNotificationServiceClient snsClient = new AmazonSimpleNotificationServiceClient(Amazon.RegionEndpoint.APSouth1);
+                SMSHelper.SendSms("+918851610111","This is a message from controller");
+            // this._repo = repo;
+            // this.vm = new ContestViewModel(_repo);
         }
         #endregion
 
         [HttpGet, AllowAnonymous]
 
-        public async Task<IActionResult> Get()
+        public  void  Get()
         {
-
-            var result = await vm.GetContests();
-            return Ok(result);
+           
+            // var result = await vm.GetContests();
+            // return Ok(result);
+            Console.WriteLine("Get Method Caaled");
         }
         // GET api/values/5
         [HttpGet("{id}")]

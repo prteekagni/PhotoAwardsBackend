@@ -10,14 +10,23 @@ namespace PhotoAwards.Models
     public class UserModel : BaseModel
     {
         [Required]
-        public string Name { get; set; }
+        public string displayName { get; set; }
+
+        public string email { get; set; }
+
+        public string phone { get; set; }
+
+        public string city { get; set; }
+
+        public string gender { get; set; }
         
-        public string Logo { get; set; }
-        public bool? isFav { get; set; }
+        public string profileImage { get; set; }
 
-        public string Url { get; set; }
+        public int credits { get; set; }
 
-        public string BrandType {get;set;}
+        public string loggedVia { get; set; }
+
+        public bool isprofileCompleted {get;set;}
 
     }
 }
