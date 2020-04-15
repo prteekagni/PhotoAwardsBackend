@@ -24,9 +24,9 @@ namespace PhotoAwards.Controller
         public ContestsController(IContest repo)
         {
             // AmazonSimpleNotificationServiceClient snsClient = new AmazonSimpleNotificationServiceClient(Amazon.RegionEndpoint.APSouth1);
-                SMSHelper.SendSms("+918851610111","This is a message from controller");
+                // SMSHelper.SendSms("+918851610111","This is a message from controller");
             // this._repo = repo;
-            // this.vm = new ContestViewModel(_repo);
+            this.vm = new ContestViewModel(_repo);
         }
         #endregion
 
@@ -34,7 +34,7 @@ namespace PhotoAwards.Controller
 
         public async Task<IActionResult> Get()
         {
-             var result = await vm.GetContests();
+             var result = await this.vm.GetContests();
             return Ok(result);
         }
 

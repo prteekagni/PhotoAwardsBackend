@@ -50,3 +50,4 @@ D:\development\backend\PhotoAwards\obj\Debug\netcoreapp3.1\staticwebassets\Photo
 D:\development\backend\PhotoAwards\obj\Debug\netcoreapp3.1\staticwebassets\PhotoAwards.StaticWebAssets.xml
 D:\development\backend\PhotoAwards\obj\Debug\netcoreapp3.1\PhotoAwards.dll
 D:\development\backend\PhotoAwards\obj\Debug\netcoreapp3.1\PhotoAwards.pdb
+D:\development\backend\PhotoAwards\bin\Debug\netcoreapp3.1\AWSSDK.SimpleEmail.dll

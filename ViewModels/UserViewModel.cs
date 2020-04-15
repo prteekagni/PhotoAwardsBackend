@@ -16,6 +16,18 @@ namespace PhotoAwards.ViewModels
         {
             this._repo=repo;
         }
+
+        public async Task<UserModel> Create(UserModel data)
+        {
+            data.ID = Guid.NewGuid();
+            var result = await this._repo.Add(data);
+
+            return result;
+        }
+         public async Task<List<UserModel>> GetUsers()
+        {
+            return await _repo.GetAll() as List<UserModel>;
+        }
     
         // public async Task<ResultModel<UserModel>> RegisterUser(UserModel data)
         // {
